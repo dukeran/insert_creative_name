@@ -58,7 +58,10 @@
                                 <rect key="frame" x="176" y="105" width="103" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits"/>
+                                <textInputTraits key="textInputTraits" keyboardType="decimalPad"/>
+                                <connections>
+                                    <action selector="on_editing_change:" destination="BYZ-38-t0r" eventType="editingChanged" id="olT-NT-Ewl"/>
+                                </connections>
                             </textField>
                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" id="96D-LF-jVg">
                                 <rect key="frame" x="34" y="315" width="245" height="29"/>
@@ -68,12 +71,30 @@
                                     <segment title="20%"/>
                                     <segment title="22%"/>
                                 </segments>
+                                <connections>
+                                    <action selector="on_editing_change:" destination="BYZ-38-t0r" eventType="valueChanged" id="hZb-Xa-4gC"/>
+                                </connections>
                             </segmentedControl>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <gestureRecognizers/>
+                        <connections>
+                            <outletCollection property="gestureRecognizers" destination="35o-XW-PB1" appends="YES" id="ARY-XI-3CS"/>
+                        </connections>
                     </view>
+                    <connections>
+                        <outlet property="bill_field" destination="PbD-U8-CBw" id="f95-eJ-o5s"/>
+                        <outlet property="tip_control" destination="96D-LF-jVg" id="01S-Zb-wuw"/>
+                        <outlet property="tip_label" destination="Yqv-fw-DUU" id="aEJ-Lh-aeM"/>
+                        <outlet property="total_label" destination="Ide-gZ-mO7" id="KE9-1D-0u1"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="35o-XW-PB1">
+                    <connections>
+                        <action selector="on_tap:" destination="BYZ-38-t0r" id="Sx3-62-Qdg"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="173" y="316"/>
         </scene>
