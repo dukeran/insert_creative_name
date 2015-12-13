@@ -28,6 +28,49 @@ class ViewController: UIViewController {
         
         tip_label.text = "$0.00"
         total_label.text = "$0.00"
+        
+       self.tip_label.alpha = 0
+    
+        self.total_label.alpha = 0
+        
+        
+    }
+
+    
+    
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        print("view will appear")
+        
+        // Optionally initialize the property to a desired starting value
+        
+        UIView.animateWithDuration(1, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.tip_label.alpha = 1
+
+            })
+        
+        UIView.animateWithDuration(1, animations: {
+            // This causes first view to fade in and second view to fade out
+            self.total_label.alpha = 1
+            
+  })
+
+    }
+    
+    override func viewDidAppear(animated: Bool) {
+        super.viewDidAppear(animated)
+        print("view did appear")
+    }
+    
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        print("view will disappear")
+    }
+    
+    override func viewDidDisappear(animated: Bool) {
+        super.viewDidDisappear(animated)
+        print("view did disappear")
     }
 
     override func didReceiveMemoryWarning() {
